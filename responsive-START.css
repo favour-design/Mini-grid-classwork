@@ -1,0 +1,344 @@
+/*
+  Hello!
+  These are some base styles so that our tutorial looks good.
+  Let's go through the important bits real quick
+*/
+:root {
+  --yellow: #ffc600; /*This is just some simple css variables*/
+  --black: #272727;
+}
+
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-weight: 900;
+  font-size: 10px;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url('./images/topography.svg'),
+    linear-gradient(110deg, #f93d66, #6d47d9);
+  background-size: 340px, auto;
+  min-height: calc(100vh - 100px);
+  margin: 50px;
+  /* background: white; */
+  background-attachment: fixed;
+  letter-spacing: -1px;
+  font-size: 15px;
+}
+
+button {
+  background: #ffc600;
+  border: 0;
+  padding: 10px 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* PLEASE DO NOT TOUCH THE ABOVE STYLES
+ WRITE YOUR OWN STYLES BELOW. GOOD LUCK */
+
+ /* Navigation */
+ .menu ul {
+   display: grid;
+   grid-gap: 20px;
+   list-style: none;
+   padding: 0;
+   grid-template-columns: repeat(5, 1fr);
+ }
+
+ .menu a {
+   background: var(--yellow);
+   display: block;
+   text-decoration: none;
+   padding: 0.8rem;
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 2rem;
+   color: var(--black);
+   font-weight: 700;
+ }
+
+.menu a:hover {
+  background: var(--black);
+  color: var(--yellow);
+ }
+
+/* The top section */
+.top {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+  'hero hero cta1'
+  'hero hero  cta2';
+}
+/* hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  grid-area: hero;
+  min-height: 50rem;
+  background: url(images/taco.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+}
+.cta1 {
+  grid-area: cta1;
+}
+.cta2 {
+  grid-area: cta2;
+}
+.cta {
+  display: grid;
+  background-color: var(--yellow);
+  padding: 2rem;
+  justify-items: center;
+  align-content: center;
+  font-size: 1rem;
+  
+} 
+.price {
+  font-size: 4.7rem;
+  font-weight: 500;
+
+}
+.menu {
+  margin-top: 1.5rem;
+}
+.hero h1 {
+  margin-top: 15rem;
+  background-color: var(--yellow);
+  font-size: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.5rem;
+  word-spacing: 0.5rem;
+  
+}
+.hero p {
+  background-color: var(--yellow);
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.5rem;
+}
+.cta p {
+  margin-bottom: 0rem;
+  line-height: 0.5rem;
+}
+.kom {
+  font-size: 1.5rem;
+  /* padding-bottom: 3rem; */
+  padding-top : 3rem;
+  font-weight: 550;
+}
+/* Features */
+.features   {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.feature {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+} 
+.icon {
+  font-size: 5rem;
+} 
+.feature p {
+   color: darkslategray;
+   font: lighter;
+   font-family: poppsins;
+} 
+.feature h3 {
+  font-size: 2.3rem;
+}
+/* About */
+.about {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 4rem;
+  margin-bottom: 2rem;
+}
+/* .grams {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  text-align: center;
+  position: relative; */
+/* } */
+/* .grams::before {
+  content: "";
+  display: block;
+  width: 45rem;
+  height: 0.8rem;
+  background: var(--yellow);
+  background-image: linear-gradient( to left, 110deg,  #6d47d9, 110deg);
+  position: absolute;
+  left: 0;
+  top:45%;
+  z-index: -2;
+}
+.grams::after {
+  content: "";
+  display: block;
+  width: 45rem;
+  height: 0.8rem;
+  background: var(--yellow);
+  position: absolute;
+  right: 0;
+  top:45%;
+  z-index: -2;
+}
+span {
+  background: 
+  url('./images/topography.svg');
+} */
+.gallery {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.gallery img {
+  width: 100%;
+  margin-top: 1rem;
+
+}
+
+.border {
+  /* padding-bottom: 0.8rem; */
+  background: var(--yellow);
+  /* width: 30%; */
+}
+
+.instant-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 0.5rem;
+  grid-column: 1 /-1;
+} 
+
+.inline {
+  justify-self: center;
+  font-size: 2rem;
+}
+
+.border {
+  height: 0.8rem;
+  align-self: center;
+ 
+}
+
+.right {
+  background-image: linear-gradient(to right, var(--yellow), #6d47d9);
+}
+
+.left {
+  background-image: linear-gradient(to left, var(--yellow), #f93d66);
+}
+/* .yellow-header {
+  /* text-align: center; */
+  /* position: relative; */
+/* } */
+
+/* .insnt {
+  display: inline;
+  position: absolute; */
+  /* padding: 0 1%; */
+
+/* }
+
+.insnt::before {
+  content:"";
+  padding-bottom: 0.4rem;
+  background: var(--yellow);
+  display: inline-block;
+  width: 43.5%;
+}
+
+.insnt::after {
+  content:"";
+  padding-bottom: 0.4rem;
+  background: var(--yellow);
+  display: inline-block;
+  width: 43.5%;
+}
+
+.insnt::after {
+  content:"";
+  padding-bottom: 0.4rem;
+  background: var(--yellow);
+  display: inline-block;
+  width: 50%; */
+/* }  */
+
+/* Media Quaries */
+@media (max-width: 768px) {
+  .top {
+    grid-template-areas: 
+    'hero hero'
+    'cta1 cta2';
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  } 
+} 
+
+@media (max-width: 480px){
+  .menu ul {
+    grid-template-columns: 1fr;
+  }
+  .top {
+    grid-template-areas:
+    'hero'
+    'cta1'
+    'cta2';
+  }
+  .about {
+    grid-template-columns: 1fr;
+  }
+   .about button {
+     grid-template-columns: 1fr;
+   }
+   .features   {
+    grid-template-columns: 1fr;
+  }
+  .inline {
+    font-size: 1.1rem;
+  }
+  
+}
+@media (max-width: 415px){
+  .inline {
+    font-size: 0.7rem;
+  }
+  
+}
+
+
+ 
